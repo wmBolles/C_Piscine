@@ -47,8 +47,3 @@ void    ft_print_combn(int n)
     if (n >= 1 && n <= 9)
         print_combination(arr, n, 0, 0);
 }
-
-int main(void)
-{
-    ft_print_combn(2);
-}
