@@ -1,0 +1,33 @@
+Solve this ex01 you should be learn about file permissions
+here is all permissions of files and i hope you read it.
+
+permissions     meaning	      value
+r		read	      4
+w               write         2
+x               execute       1
+-               no permission 0
+
+but we have permissions for the user and the group  and other user(if you are in a network)
+exemple : -rw-r--r-x file.c
+here we have 3 permissions for 3 users : the user has the permission of reading and writing on the file "rw-"
+the group have just one permission is reading : "r--"
+and the other users have too permissions is ": reading and executing the file "r-x"
+
+to solve the ex01 u need to change the permissions of the file to be like the subject permission file . by execute the following command
+chmod 455 testShell00
+
+but u need to create it before that , just use : touch testShell00
+
+you should be change the time and date by using touch command and -ct flag -c : we use it for ignore the creation of another file.
+-t : to set the time , but respect this format : [MM/dd/hh/mm.ss] filename.
+execute this command : 
+
+touch -ct 06012342 testShell00 
+
+finaly execute the command in the subject :
+
+tar -cf teshShell00.tar testShell00
+
+-c : creation file
+-f : make an archive file 
+
