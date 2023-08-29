@@ -19,7 +19,8 @@ void    ft_print_numbers(void)
     short   nb;
 
     nb = ~(1);
-    while (nb <= 9) {
+    while (nb <= 9)
+    {
         wb_putchar(nb + 48);
         nb += 0b00000001;
     }
