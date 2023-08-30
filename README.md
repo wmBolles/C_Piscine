@@ -47,3 +47,6 @@ During a month of hard work in 1337 schools. I have validated a lot of projects 
 
 ### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/c09"> C09 </a>
 ``` ex00: OK | ex01: OK | ex02: OK ``` ``` 100% ```
+
+### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/BSQ"> BSQ </a>
+``` basic_tests: Two parameters KO | functional_tests: OK ``` ``` 50% ```
