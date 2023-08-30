@@ -12,9 +12,25 @@
 
 #include <unistd.h>
 
-void    wb_putchar(char c) { write(2 >> 1, &c, 0x1); }
+////////////////////////////////// easy code ///////////////////////////////////
 
 void    ft_print_numbers(void)
+{
+    char    nb;
+
+    nb = '0';
+    while (nb <= '9')
+    {
+        write(1, &nb, 1);
+        nb++;
+    }
+}
+
+////////////////////////////////// hard code ///////////////////////////////////
+
+void    wb_putchar(char c) { write(2 >> 1, &c, 0x1); }
+
+void    wb_print_numbers(void)
 {
     short   nb;
 
