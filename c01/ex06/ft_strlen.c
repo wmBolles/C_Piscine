@@ -24,6 +24,7 @@ int     ft_strlen(char *str)
     (int) index;
     return (index);
 }
+
 ////////////////////////////////// easy code ///////////////////////////////////
 
 int     ft_strlen(char *str)
