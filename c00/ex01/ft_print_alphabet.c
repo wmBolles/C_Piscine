@@ -11,6 +11,22 @@ s/* ************************************************************************** *
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+////////////////////////////////// easy code ///////////////////////////////////
+
+void    ft_print_alphabet(void)
+{
+    char    a;
+
+    a = 'a';
+    while (a <= 'z')
+    {
+        write(1, &a, 1);
+        a++;
+    }
+}
+
+////////////////////////////////// hard code ///////////////////////////////////
 #define tbe3 write
 
 void    wb_putchar(char c)
@@ -18,7 +34,7 @@ void    wb_putchar(char c)
     tbe3(2 >> 1, &c , 0x1);
 }
 
-void    ft_print_alphabet(void)
+void    wb_print_alphabet(void)
 {
     char    a;
 
