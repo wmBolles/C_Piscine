@@ -34,7 +34,7 @@ void    ft_print_comb2(void)
             wb_putchar(' ');
             wb_putchar(n2 / 10 + 48);
             wb_putchar(n2 % 10 + 48);
-            (n1 != 98) ? cama_space : n1;
+            (n1 != 98) ? cama_space : n1; // use if(); due to nrominette rules.
             n2++;
         }
         n1++;
