@@ -24,3 +24,11 @@ void    ft_print_reverse_alphabet(void)
         index -= (4 >> 2);  // learn bit manipulation to understand this operators like >> or << or ~ and more...
     }
 }
+
+////////////////////////////////// for test ////////////////////////////////////
+int     main(void)
+{
+    ft_print_reverse_alphabet();
+    return (0);
+}
+////////////////////////////////// good luck ///////////////////////////////////
