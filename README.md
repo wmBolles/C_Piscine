@@ -41,3 +41,7 @@ During a month of hard work in 1337 schools. I have validated a lot of projects 
 
 ### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/c07"> C07 </a>
 ``` ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: Nothing turned in | ex05: Nothing turned in ``` ``` 60% ```
+
+### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/c08"> C08 </a>
+
+``` ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK ``` ``` 100% ```
