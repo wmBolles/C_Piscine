@@ -6,9 +6,9 @@ During a month of hard work in 1337 schools. I have validated a lot of projects 
 <img src="https://github.com/wmBolles/C-piscine-1337/blob/main/images/Screenshot%202023-08-28%20210910.png">
 
   <h1>Moulinette Grades</h1>
-  <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/shell00">Shell00</a>
+###  <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/shell00"> Shell00</a>
   <pre>
-ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK <details><summary></summary> ex05: OK | ex06: OK | ex07: OK | ex08: OK | ex09: OK </pre></details>
+ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK <details style=" .no-newline { white-space: nowrap; }"><summary>more</summary> ex05: OK | ex06: OK | ex07: OK | ex08: OK | ex09: OK </pre></details>
   <pre>100%</pre>
 
   <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/shell01">Shell01</a>
