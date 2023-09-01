@@ -18,6 +18,7 @@ int     ft_str_is_lowercase(char *str)
     }
     return 1;
 }
+////////////////////////////////// for test ////////////////////////////////////
 #include <stdio.h>
 
 int main(void)
@@ -26,3 +27,4 @@ int main(void)
     printf("%d\n", ft_str_is_lowercase(""));
     printf("%d", ft_str_is_lowercase("abcd"));
 }
+////////////////////////////////// good luck ///////////////////////////////////
