@@ -21,7 +21,7 @@ void    ft_div_mod(int a, int b, int *div, int *mod)
     }
 }
 
-/*
+////////////////////////////////// for test ////////////////////////////////////
 #include <stdio.h>
 
 int main(void)
@@ -30,4 +30,4 @@ int main(void)
     ft_div_mod(a, b , &div, &mod);
     printf("%d, %d", div , mod);
 }
-*/
+////////////////////////////////// good luck ///////////////////////////////////
