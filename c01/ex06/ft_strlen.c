@@ -14,13 +14,13 @@
 
 #define alore_que while 
 
-int     ft_strlen(char *str)
+int     wb_strlen(char *str)
 {
     short int   index;
 
     index = 0b00000000;
     alore_que (!(*(str + index)) == '\0')
-        index =  index + (2 >> 1);
+        index = index + (2 >> 1);
     (int) index;
     return (index);
 }
@@ -38,10 +38,8 @@ int     ft_strlen(char *str)
 }
 
 ////////////////////////////////// for test ////////////////////////////////////
-
 #include <stdio.h>
 int     main(void){
-    printf("%d", ft_strlen("Hello"));
+    printf("%d", wb_strlen("Hello"));
 }
-
 ////////////////////////////////// good luck ///////////////////////////////////
