@@ -18,4 +18,6 @@ void    ft_putstr(char *str)
         write(1, str++, 1);
 }
 
-// int     main(void) { ft_putstr("Hello, World"); } // for testing
+////////////////////////////////// for test ////////////////////////////////////
+int     main(void) { ft_putstr("Hello, World"); }
+////////////////////////////////// good luck ///////////////////////////////////
