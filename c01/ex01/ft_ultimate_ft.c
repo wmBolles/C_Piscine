@@ -15,7 +15,7 @@ void    ft_ultimate_ft(int *********nbr)
     *********nbr = 0x2a;
 }
 
-/*
+////////////////////////////////// for test ////////////////////////////////////
 #include <stdio.h>
 
 int main(void)
@@ -36,4 +36,4 @@ int main(void)
     ft_ultimate_ft(ptr9);
     printf("%d", nb);
 }
-*/
+////////////////////////////////// good luck ///////////////////////////////////
