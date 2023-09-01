@@ -25,7 +25,8 @@ void    ft_ultimate_div_mod(int *a, int *b)
         *b = x % y;
     }
 }
-/*
+
+////////////////////////////////// for test ////////////////////////////////////
 #include <stdio.h>
 
 int main(void)
@@ -34,4 +35,4 @@ int main(void)
     ft_ultimate_div_mod(&a, &b);
     printf("%d, %d", a, b);
 }
-*/
+////////////////////////////////// good luck ///////////////////////////////////
