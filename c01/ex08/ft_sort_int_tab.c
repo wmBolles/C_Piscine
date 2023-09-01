@@ -32,13 +32,14 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
+////////////////////////////////// for test ////////////////////////////////////
 #include <stdio.h>
 int main(void)
 {
 	int tab[5] = {1 ,4 ,5 ,2 ,3};
 	ft_sort_int_tab(tab , 5);
 
-	int o = 0;
-	while(o <= 4)
-		printf("%d", tab[o++]);
+	for (int i = 0; i <= 5; i++)
+		printf("%d ", tab[i]);	
 }
+////////////////////////////////// good luck ///////////////////////////////////
