@@ -18,3 +18,12 @@ void    ft_swap(int *a, int *b)
     *a = *b;
     *b = swap;
 }
+
+////////////////////////////////// for test ////////////////////////////////////
+#include <stdio.h>
+int     main(void)
+{
+    int     value1 = 1, value2 = 2;
+    ft_swap(&value1, &value2);
+    printf("value1 = %d\nvalue2 = %d", value1, value2);
+}
