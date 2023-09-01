@@ -29,18 +29,13 @@ void    ft_rev_int_tab(int *tab, int size)
 }
 
 ////////////////////////////////// for test ////////////////////////////////////
-
 #include <stdio.h>
 
 int main()
 {
     int arr[6] = {1, 2, 3, 4, 5, 6};
     ft_rev_int_tab(arr, 6);
-    int i = 0;
-    while (i < 6)
-    {
-        printf("%d", arr[i]);
-        i++;
-    }
+    for (int i = 0; i <= 5; i++)
+        printf("%d ", arr[i]);
 }
 ////////////////////////////////// good luck ///////////////////////////////////
