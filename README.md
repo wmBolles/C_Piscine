@@ -7,8 +7,8 @@ During a month of hard work in 1337 schools. I have validated a lot of projects 
 
   <h1>Moulinette Grades</h1>
 
-### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/shell00">Shell00</a>
-  <!-- <pre>ex00 : OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK | ex06: OK | ex07: OK | ex08: OK | ex09: OK</pre>--><pre>100%</pre>
+### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/rush00">Rush00</a>
+  <!-- <pre>ex00 : OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK | ex06: OK | ex07: OK | ex08: OK | ex09: OK</pre>--><pre>104% bonus</pre>
 
 ### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/shell00">Shell00</a>
   <pre>ex00 : OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK | ex06: OK | ex07: OK | ex08: OK | ex09: OK</pre><pre>100%</pre>
