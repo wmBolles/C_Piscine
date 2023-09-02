@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/02 18:37:53 by wabolles          #+#    #+#             */
+/*   Updated: 2023/09/02 18:37:53 by wabolles         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char    *ft_strcapitalize(char *str)
 {
@@ -25,6 +35,7 @@ char    *ft_strcapitalize(char *str)
     }
     return str;
 }
+
 #include <stdio.h>
 
 int main()
