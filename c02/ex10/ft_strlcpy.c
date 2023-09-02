@@ -41,6 +41,7 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
     return (src_len);
 }
 
+////////////////////////////////// for test ////////////////////////////////////
 int main(void)
 {
     char dest[] = "empty";
@@ -48,3 +49,4 @@ int main(void)
 
     printf("%d", ft_strlcpy(dest, src, 3));
 }
+////////////////////////////////// good luck ////////////////////////////////////
