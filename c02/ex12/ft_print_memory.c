@@ -6,7 +6,7 @@
 /*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 18:41:43 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/02 18:41:54 by wabolles         ###   ########.fr       */
+/*   Updated: 2023/09/02 18:46:04 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void 	*ft_print_memory(void *addr, unsigned int size)
 	return(addr);
 }
 
+////////////////////////////////// for test ////////////////////////////////////
 #include <stdio.h>
 
 int	main(void)
@@ -105,3 +106,4 @@ int	main(void)
 	//ft_print_memory((char *)str6, 16);
 	return(0);
 }
+////////////////////////////////// good luck ////////////////////////////////////
