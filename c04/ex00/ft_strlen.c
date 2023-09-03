@@ -5,24 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 23:33:56 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/03 23:34:07 by wabolles         ###   ########.fr       */
+/*   Created: 2023/08/29 19:32:01 by wabolles          #+#    #+#             */
+/*   Updated: 2023/09/03 23:44:57 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+////////////////////////////////// hard code ///////////////////////////////////
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+#define alore_que while 
+
+int     wb_strlen(char *str)
+{
+    short int   index;
+
+    index = 0b00000000;
+    alore_que (!(*(str + index)) == '\0')
+        index = index + (2 >> 1);
+    (int) index;
+    return (index);
 }
 
+////////////////////////////////// easy code ///////////////////////////////////
+
+int     ft_strlen(char *str)
+{
+    int     i;
+
+    i = 0;                     // recommended //
+    while (str[i])
+        i++;
+    return (i);
+}
+
+////////////////////////////////// for test ////////////////////////////////////
 #include <stdio.h>
-int	main(void)
-{
-	char str[] = "hello";
-	printf("%d\n", ft_strlen(str));
+int     main(void){
+    printf("%d", wb_strlen("Hello"));
 }
+////////////////////////////////// good luck ///////////////////////////////////
