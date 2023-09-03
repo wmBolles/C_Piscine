@@ -5,101 +5,59 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 23:41:32 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/03 23:41:35 by wabolles         ###   ########.fr       */
+/*   Created: 2023/09/03 23:43:15 by wabolles          #+#    #+#             */
+/*   Updated: 2023/09/03 23:43:18 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-size_t	ft_base_len(char *base)
+static int	ft_isspace(char c)
 {
-	size_t	i;
-
-	i = 0b0;
-	while (base[i])
-		i++;
-	return (i);
+	if (c == '\t' || c == ' ' || c == '\n' || c == '\v' || c == '\f' ||
+			c == '\r')
+		return (1);
+	return (0);
 }
 
-short	check_base(char *base)
+static int	_isdigit(char c)
 {
-	int	i;
-	int	j;
+	if ((c >= '0' && c <= '9') ||
+			(c >= 'A' && c <= 'F'))
+		return (1);
+	return (0);
+}
 
-	if (*base == '\0')
-		return (0);
+static char	toupper(char c)
+{
+	if (c >= 'a' && c <= 'f')
+		return (c - 32);
+	return (c);
+}
+
+int			ft_atoi_base(char *str, int str_base)
+{
+	int		i;
+	int		neg;
+	int		ret;
+
+	neg = 1;
+	ret = 0;
 	i = 0;
-	while(base[i])
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-')
 	{
-		if (base[i] == '+' || base[i] == '-' || base[i] < 32 || base[i] > 126)
-			return (0);
-		j = -0;
-		while (base[j])
-		{
-			if (base[i] == base[j] && i != j)
-				return (0);
-			j++;
-		}
+		neg = -1;
 		i++;
 	}
-	return (1);
-}
-
-int	get_value(char c ,char *base)
-{
-	int	i;
-
-	i = 0;
-	while (base[i])
+	else if (str[i] == '+')
+		i++;
+	while (str[i])
 	{
-		if (c == base[i])
-			return (i);
+		if (!_isdigit(toupper(str[i])))
+			return (-1);
+		ret *= str_base;
+		ret += (str[i] <= '9') ? str[i] - '0' : toupper(str[i]) - 55;
 		i++;
 	}
-	return(-1);
-}
-
-int	ft_atoi(char *str, char *base)
-{
-	int	sign = 1;
-	int	nb = 0;
-	int	base_len;
-	int	value;
-
-	base_len = ft_base_len(base);
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	while (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign = -sign;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		value = get_value(*str, base);
-		nb *= base_len;
-		nb += value;
-		str++;
-	}
-	return (sign * nb);
-}
-
-
-int	ft_atoi_base(char *str, char *base)
-{
-	int	atoi_nb;
-	int	final_number;
-
-	if (!check_base(base))
-		return (0);
-	atoi_nb = ft_atoi(str, base);
-	return (atoi_nb); // just exemple you can return directly... 	
-}
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("%d", ft_atoi_base(" 		-+---+10110a567", "01"));
+	return (ret * neg);
 }
