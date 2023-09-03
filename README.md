@@ -27,3 +27,6 @@ During a month of hard work in 1337 schools. I have validated a lot of projects 
 
 ### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/c03">C03</a>
   <pre>ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK</pre><pre>100%</pre>
+
+### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/c03">C04/a>
+  <pre>ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: KO</pre><pre>100%</pre>
