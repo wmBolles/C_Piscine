@@ -6,11 +6,11 @@
 /*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:28:01 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/05 11:28:03 by wmbolles         ###   ########.fr       */
+/*   Updated: 2023/09/05 11:30:06 by wmbolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
+int	ft_iterative_power(int nb, int power)
 {
 	int	i;
 	int	p;
