@@ -43,14 +43,14 @@ During a month of hard work in 1337 schools. I have validated a lot of projects 
 ### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/c08">C09</a>
   <pre>ex00: OK | ex01: OK | ex02: OK</pre><pre>100%</pre>
 
-### <a href="#">EXAM00</a>
+### EXAM00
 <pre>0%</pre>
 
-### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/c08">EXAM01</a>
+### EXAM01
 <pre>100%</pre>
 
-### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/c08">EXAM02</a>
+### EXAM02
 <pre>90%</pre>
 
-### <a href="https://github.com/wmBolles/C-piscine-1337/tree/main/c08">EXAM_FINAL</a>
+### EXAM_FINAL
 <pre>66%</pre>
