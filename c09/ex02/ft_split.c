@@ -6,13 +6,13 @@
 /*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 23:00:02 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/07 23:02:05 by wmbolles         ###   ########.fr       */
+/*   Updated: 2023/09/07 23:06:44 by wmbolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_is_space(char to_find, char *str)
+int	ft_is_space(char to_find, char *str)
 {
 	while (*str)
 	{
@@ -22,7 +22,7 @@ int		ft_is_space(char to_find, char *str)
 	return (0);
 }
 
-int   ft_wordcount(char *str, char *charset)
+int	ft_wordcount(char *str, char *charset)
 {
 	int	count;
 
@@ -41,9 +41,9 @@ int   ft_wordcount(char *str, char *charset)
 	return (count);
 }
 
-int		ft_len_word(char *str, int i, char *charset)
+int	ft_len_word(char *str, int i, char *charset)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (!(ft_is_space(str[i], charset)) && str[i])
@@ -63,7 +63,7 @@ char	**ft_split(char *str, char *charset)
 
 	i = 0;
 	j = 0;
-	if ((res = malloc(sizeof(char*) * (ft_wordcount(str, charset) + 1))) == NULL)
+	if ((res = (malloc(sizeof(char*) * (ft_wordcount(str, charset) + 1)))) == NULL)
 		return ((void *)0);
 	while (str[i])
 	{
