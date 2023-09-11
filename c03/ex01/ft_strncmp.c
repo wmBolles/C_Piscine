@@ -6,16 +6,16 @@
 /*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:08:09 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/02 19:08:09 by wabolles         ###   ########.fr       */
+/*   Updated: 2023/09/11 23:40:43 by wmbolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-    int i;
-    
-    i = 0;
-    while(s1[i] && s2[i] && s1[i] == s2[i] && i < n)
-        i++;
-    return (s1[i] - s2[i]); 
+	int	i;
+
+	i = 0x0;
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
+		i++;
+	return (s1[i] - s2[i]);
 }
