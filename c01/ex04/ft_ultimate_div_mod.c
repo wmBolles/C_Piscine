@@ -3,36 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 19:01:20 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/29 19:01:20 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/13 18:42:47 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/13 18:46:36 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define Si if // yeah again...
-
-void    ft_ultimate_div_mod(int *a, int *b)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-    int     x;
-    int     y;
+	int		div;
+	int		mod;
 
-    x = *a;
-    y = *b;
-    Si (*b != 0b0)
-    {
-        *a = x / y;
-        *b = x % y;
-    }
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }
-
-////////////////////////////////// for test ////////////////////////////////////
-#include <stdio.h>
-
-int main(void)
-{
-    int a = 10, b = 5;
-    ft_ultimate_div_mod(&a, &b);
-    printf("%d, %d", a, b);
-}
-////////////////////////////////// good luck ///////////////////////////////////

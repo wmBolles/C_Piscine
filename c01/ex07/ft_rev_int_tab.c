@@ -3,39 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 19:51:38 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/29 19:51:38 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/13 13:04:23 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/13 19:10:59 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_rev_int_tab(int *tab, int size)
+void	ft_rev_int_tab(int *tab, int size)
 {
-    int i;
-    int j;
-    int swap;
+	int		var;
+	int		i;
 
-    j = size - 1;
-    i = 0;
-    while (i < size / 2)
-    {
-        swap = tab[i];
-        tab[i] = tab[j];
-        tab[j] = swap;
-        i++;
-        j--;
-    }
+	i = 0;
+	while (i < size / 2)
+	{
+		var = tab[i];
+		tab[i] = tab[size - i - 1];
+		tab[size - i - 1] = var;
+		i++;
+	}
 }
-
-////////////////////////////////// for test ////////////////////////////////////
-#include <stdio.h>
-
-int main()
-{
-    int arr[6] = {1, 2, 3, 4, 5, 6};
-    ft_rev_int_tab(arr, 6);
-    for (int i = 0; i <= 5; i++)
-        printf("%d ", arr[i]);
-}
-////////////////////////////////// good luck ///////////////////////////////////

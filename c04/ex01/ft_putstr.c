@@ -3,21 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 19:29:47 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/03 23:45:46 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/17 02:31:06 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/17 02:32:24 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-    while(*str)
-        write(1, str++, 1);
+	while (*str)
+		write(1, str++, 1);
 }
-
-////////////////////////////////// for test ////////////////////////////////////
-int     main(void) { ft_putstr("Hello, World"); }
-////////////////////////////////// good luck ///////////////////////////////////

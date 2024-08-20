@@ -3,36 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 18:40:34 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/02 18:40:34 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/16 19:43:20 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/16 19:52:40 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void    low_to_upp(char *str)
+int	is_lower(char c)
 {
-    if (*str >= 'a' && *str <= 'z')
-        str -= 32;
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else
+		return (0);
 }
 
-char    *ft_strupcase(char *str)
+char	*ft_strupcase(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(str[i])
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] -= 32;
-        i++;
-    }
-    return str;
-}
-int main()
-{
-    char str[] = "ifgfif";
-    printf("%s\n", ft_strupcase(str));
+	i = 0b0;
+	while (str[i])
+	{
+		if (is_lower(str[i]))
+			str[i] -= 32;
+		i++;
+	}
+	return (str);
 }

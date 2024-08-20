@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 23:55:09 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/03 23:55:09 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/17 23:56:26 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/19 13:12:20 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_puts(char *str)
+void	ft_putstr(char *str)
 {
-    while(*str)
-        write(1, str++, 1);
+	while (*str)
+		write(1, str++, 1);
+	write(1, "\n", 1);
 }
 
-int     main(int ac, char **av)
+int	main(int ac, char *av[])
 {
-    if(ac == 1)
-        ft_puts(av[0]);
-    write(1, "\n", 1);
+	(void )ac;
+	ft_putstr(av[0]);
+	return (0);
 }

@@ -3,34 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 02:27:32 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/30 02:27:32 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/13 18:09:23 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/13 18:13:48 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
-    int     i;
+	int		i;
 
-    i = 0b0;
-    while (src[i])
-    {
-        dest[i] = src[i];
-        i += (2 >> 1);
-    }
-    return (dest);
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
-
-////////////////////////////////// for test ////////////////////////////////////
-
-#include <stdio.h>
-
-int main(void)
-{
-    char dest[] = "empty";
-    char src[] = "whaaaaat";
-    printf("%s", ft_strcpy(dest, src));
-}
-////////////////////////////////// good luck ////////////////////////////////////

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 17:33:19 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/06 17:33:20 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/07/26 16:09:51 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/26 16:20:49 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value) (Value < 0 ? -Value : Value)
+# define ABS(value) (value < 0) * -value + (value >= 0) * value
 
 #endif

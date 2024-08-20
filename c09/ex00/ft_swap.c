@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 15:47:29 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/07 15:47:59 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/07/31 19:19:37 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/31 19:21:22 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int	tmp;
+	int		swap;
 
-	tmp = *a;
+	swap = *a;
 	*a = *b;
-	*b = tmp;
+	*b = swap;
 }

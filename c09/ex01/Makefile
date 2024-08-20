@@ -3,53 +3,37 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: wabolles <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/07 22:57:42 by wmbolles          #+#    #+#              #
-#    Updated: 2023/09/07 22:57:44 by wmbolles         ###   ########.fr        #
+#    Created: 2023/08/03 21:41:24 by wabolles          #+#    #+#              #
+#    Updated: 2023/08/03 22:24:29 by wabolles         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := libft.a
-CC := gcc
-CFLAGS := -Wall -Werror -Wextra -c
-SRC_DIR := ./srcs/
-SRC_FILES := ft_putchar.c \
-			ft_putstr.c \
-			ft_strcmp.c \
-			ft_strlen.c \
-			ft_swap.c
-OBJ_FILES = $(SRC_FILES:.c=.o)
-SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
-OBJS = $(addprefix $(SRC_DIR), $(OBJ_FILES))
-HEADER := -I includes/
-LIBC := ar rc
-LIBR := ranlib
-RM := rm -f
+INCLUDES = srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
 
-all: obj $(NAME)
+OBJS = ${INCLUDES:.c=.o}
 
-obj: $(SRCS)
+HEADERS = includes/
 
-$(SRC_DIR)%.o: $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) $< -o $@ $(HEADER)
+NAME = libft.a
+
+CCFLAGS = -Wall -Wextra -Werror
+
+COMPILER = cc
+
+%.o: %.c
+	$(COMPILER) $(CCFLAGS) -c $< -o $@ -I $(HEADERS)
 
 $(NAME): $(OBJS)
-	$(LIBC) $(NAME) $(OBJS)
-	$(LIBR) $(NAME)
+	ar rc $(NAME) $(OBJS)
+
+all: $(NAME)
 
 clean:
-	/bin/rm -f $(OBJS)
+	rm -rf $(OBJS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re
-
-#norm :
-#	norminette -R CheckForbiddenSourceHeader */*.[ch]
-
-
-

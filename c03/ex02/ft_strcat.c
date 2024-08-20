@@ -3,37 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 19:12:22 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/02 19:12:22 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/14 21:55:52 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/14 22:01:25 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-    int i;
-    int j;
+	int		i;
+	int		j;
 
-    i = 0;
-    j = 0;
-    while(dest[i])
-        i++;
-    while(src[j])
-    {
-        dest[i] = src[j];
-        i++;
-        j++;
-    }
-    dest[i] = '\0';
-    return(dest);
-}
-
-#include <stdio.h>
-int main()
-{
-    char src[] = " world";
-    char dest[] = "he llo";
-    char *str = ft_strcat(dest, src);
-    printf("%s", str);
+	i = 0;
+	while (dest[i])
+		i++;
+	j = 0;
+	while (src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

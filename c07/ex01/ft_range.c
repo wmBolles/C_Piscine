@@ -3,34 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 00:42:05 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/08 00:42:09 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/07/20 01:39:55 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/20 15:42:00 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int	*ft_range(int min, int max)
 {
-	int		range;
-	int		index;
-	int		*buffer;
-	int		*d;
+	int		*ptr;
+	int		i;
+	int		j;
 
 	if (min >= max)
 		return (0);
-	range = max - min;
-	d = (buffer = malloc(range * sizeof(int)));
-	if (!d)
-		return (0);
-	index = 0;
-	while (index < range)
+	ptr = (int *)malloc(sizeof(int) * (max - min));
+	i = min;
+	j = 0b0;
+	while (i <= max)
 	{
-		buffer[index] = min + index;
-		index++;
+		ptr[j] = i;
+		i++;
+		j++;
 	}
-	return (buffer);
+	return (ptr);
 }

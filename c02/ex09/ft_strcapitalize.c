@@ -3,43 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 18:37:53 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/02 18:37:53 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/18 03:12:10 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/20 23:28:24 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strcapitalize(char *str)
+char	*ft_strlowcase(char *str)
 {
-    int check;
-    int i;
+	int		i;
 
-    check = 1;
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-        {
-            if (check == 1)
-            {
-                str[i] -= 32;
-            }
-            check >>= 1;
-        }
-        else if (str[i] >= '0' && str[i] <= '9')
-           check = 0;
-        else
-            check = 2 >> 1; 
-        i++;
-    }
-    return str;
+	i = 0x0;
+	while (str[i])
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		str++;
+	}
+	return (str);
 }
 
-#include <stdio.h>
-
-int main()
+char	*ft_strcapitalize(char *str)
 {
-    char str[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-    printf("%s", ft_strcapitalize(str));
+	int		i;
+	int		check;
+
+	ft_strlowcase(str);
+	i = 0;
+	check = 1;
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			if (check == 1)
+			{
+				str[i] -= 32;
+				check = 0;
+			}
+		}
+		else if (str[i] >= '0' && str[i] <= '9')
+			check = 0;
+		else
+			check = 1;
+		i++;
+	}
+	return (str);
 }

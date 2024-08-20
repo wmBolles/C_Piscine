@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 15:47:09 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/07 15:48:51 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/08/03 20:20:56 by wabolles          #+#    #+#             */
+/*   Updated: 2023/08/03 20:23:43 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (str[i])

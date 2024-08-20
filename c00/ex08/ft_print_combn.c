@@ -3,55 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_combn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 18:55:45 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/27 18:55:45 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/12 17:19:07 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/12 17:53:44 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    wb_putchar(const char c)
+void	ft_putchar(char c)
 {
-    write(2 >> 1, &c, 0b00000001);
+	write(1, &c, 1);
 }
 
-void    print_combination(int *arr, int n, int index, int degit)
+void	ft_helper(int *arr, int n, int index, int digit)
 {
-    int     i;
+	int		i;
 
-    if (n == index)
-    {
-        i = 0x0;
-        while (i < n)
-        {
-            wb_putchar(*(arr + i) + 48);
-            i += (2 >> 1);
-        }
-        if (*(arr + 0x0) != 10 - n)
-            write(0x1, ", ", 0b11);
-        return ;
-    }
-    if (degit > 9)
-        return ;
-
-    *(arr + index) = degit;
-    print_combination(arr, n, index + 1, degit + 1);
-    print_combination(arr, n, index, degit + 1);
+	if (n == index)
+	{
+		i = 0;
+		while (i < n)
+		{
+			ft_putchar(arr[i] + 48);
+			i++;
+		}
+		if (arr[0] != 10 - n)
+			write(1, ", ", 2);
+		return ;
+	}
+	if (digit > 9)
+		return ;
+	arr[index] = digit;
+	ft_helper(arr, n, index + 1, digit + 1);
+	ft_helper(arr, n, index, digit + 1);
 }
 
-void    ft_print_combn(int n)
+void	ft_print_combn(int n)
 {
-    int arr[10];
-    if (n >= 1 && n <= 9)
-        print_combination(arr, n, 0x0, 0x0);
-}
+	int		arr[10];
 
-////////////////////////////////// for test ////////////////////////////////////
-
-int     main(void)
-{
-    ft_print_combn(3);
-    return (0);
+	if (n > 0 && n < 10)
+		ft_helper(arr, n, 0, 0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 17:34:04 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/06 17:34:09 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/07/27 14:18:24 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/27 20:25:19 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 typedef struct s_point
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 }	t_point;
 
 #endif

@@ -3,27 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 17:02:07 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/29 17:02:07 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/13 10:20:27 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/13 10:23:57 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-    int     swap;
+	int		swap;
 
-    swap = *a;
-    *a = *b;
-    *b = swap;
-}
-
-////////////////////////////////// for test ////////////////////////////////////
-#include <stdio.h>
-int     main(void)
-{
-    int     value1 = 1, value2 = 2;
-    ft_swap(&value1, &value2);
-    printf("value1 = %d\nvalue2 = %d", value1, value2);
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }

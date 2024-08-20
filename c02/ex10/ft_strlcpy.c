@@ -3,50 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 18:40:48 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/02 18:40:48 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/16 19:56:00 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/22 20:13:32 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int     ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int i = 0;
-    while(str[i])
-        i++;
-    return i;
-}  
+	int		i;
 
-unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-    unsigned int    src_len;
-    unsigned int    i;
-
-    src_len = ft_strlen(src);
-    if (size == 0)
-        return (src_len);
-    else
-    {
-        i = 0;
-        while(src[i])
-        {
-            dest[i] = src[i];
-            i++;
-        }
-        dest[i] = '\0';
-    }
-    return (src_len);
+	i = 0x0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-////////////////////////////////// for test ////////////////////////////////////
-int main(void)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-    char dest[] = "empty";
-    char src[] = "not empty";
+	unsigned int	i;
+	unsigned int	slen;
 
-    printf("%d", ft_strlcpy(dest, src, 3));
+	i = 0;
+	slen = ft_strlen(src);
+	if (size != 0)
+	{
+		while (src[i] && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	return (slen);
 }
-////////////////////////////////// good luck ////////////////////////////////////

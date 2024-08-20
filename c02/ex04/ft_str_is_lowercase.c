@@ -1,30 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/16 19:33:44 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/16 19:37:11 by wabolles         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int     check_lower(char *str)
+int	ft_str_is_lowercase(char *str)
 {
-    if (*str >= 'a' && *str <= 'z')
-        return 1;
-    return 0;
+	if (*str == '\0')
+		return (1);
+	while (*str)
+	{
+		if (*str >= 'a' && *str <= 'z')
+			str++;
+		else
+			return (0);
+	}
+	return (1);
 }
-
-int     ft_str_is_lowercase(char *str)
-{
-    if (*str == '\0')
-        return 1;
-    while(*str)
-    {
-        if(!check_lower(str))
-            return 0;
-        str++;
-    }
-    return 1;
-}
-////////////////////////////////// for test ////////////////////////////////////
-#include <stdio.h>
-
-int main(void)
-{
-    printf("%d\n", ft_str_is_lowercase("abcdD"));
-    printf("%d\n", ft_str_is_lowercase(""));
-    printf("%d", ft_str_is_lowercase("abcd"));
-}
-////////////////////////////////// good luck ///////////////////////////////////

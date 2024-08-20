@@ -3,49 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 03:25:05 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/27 03:25:05 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/12 11:41:40 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/12 15:21:53 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-////////////////////////////////// easy code ///////////////////////////////////
-
-void    ft_print_numbers(void)
+void	ft_putchar(const char c)
 {
-    char    nb;
-
-    nb = '0';
-    while (nb <= '9')
-    {
-        write(1, &nb, 1);
-        nb++;
-    }
+	write(1, &c, 1);
 }
 
-////////////////////////////////// hard code ///////////////////////////////////
-
-void    wb_putchar(char c) { write(2 >> 1, &c, 0x1); }
-
-void    wb_print_numbers(void)
+void	ft_print_numbers(void)
 {
-    short   nb;
+	int		nb;
 
-    nb = ~(1);
-    while (nb <= 9)
-    {
-        wb_putchar(nb + 48);
-        nb += 0b00000001;
-    }
+	nb = 0;
+	while (nb <= 9)
+		ft_putchar(nb++ + 48);
 }
-
-////////////////////////////////// for test ////////////////////////////////////
-int     main(void)
-{
-    ft_print_numbers();
-    return (0);
-}
-////////////////////////////////// good luck ///////////////////////////////////

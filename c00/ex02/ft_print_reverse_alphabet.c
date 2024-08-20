@@ -3,32 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 03:18:50 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/27 03:18:50 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/12 10:56:23 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/12 11:41:01 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#define alpha "abcdefghijklmnopqrstuvwxyz" // copy from the output of ex01/ft_print_alphabet.c
 
-void    ft_print_reverse_alphabet(void)
+void	ft_putchar(const char c)
 {
-    short   index;
-
-    index = 25;
-    while(index >= 0)
-    {
-        write(2 >> 1, &alpha[index], 0x1);
-        index -= (4 >> 2);  // learn bit manipulation to understand this operators like >> or << or ~ and more...
-    }
+	write(1, &c, 1);
 }
 
-////////////////////////////////// for test ////////////////////////////////////
-int     main(void)
+void	ft_print_reverse_alphabet(void)
 {
-    ft_print_reverse_alphabet();
-    return (0);
+	char	z;
+
+	z = 'z';
+	while (z >= 'a')
+		ft_putchar(z--);
 }
-////////////////////////////////// good luck ///////////////////////////////////

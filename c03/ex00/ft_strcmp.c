@@ -3,31 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 19:02:09 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/11 23:36:34 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/07/14 21:02:44 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/14 21:07:42 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+	int		i;
 
-	i = 0x0;
+	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
 	return (s1[i] - s2[i]);
 }
-////////////////////////////////// for test ////////////////////////////////////
-/*#include <stdio.h>
-
-int     main(void)
-{
-    char s1[] = "teeeest";
-    char s2[] = "teeaest";
-
-    printf("%d", ft_strcmp(s1, s2));
-    return (0x0);
-}*/
-////////////////////////////////// good luck ////////////////////////////////////

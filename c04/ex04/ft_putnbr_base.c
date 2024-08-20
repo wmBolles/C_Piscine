@@ -3,46 +3,83 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 23:39:20 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/03 23:39:21 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/17 02:49:24 by wabolles          #+#    #+#             */
+/*   Updated: 2023/08/02 03:42:12 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putchar(char c);
+int		check_the_base(char *base);
+int		ft_strlen(char *base_len);
+int		check_the_number(int nbr);
+
+void	ft_putnbr_base(int nbr, char *base)
+{
+	unsigned int	nb;
+	char			arr[256];
+	int				i;
+
+	nb = 0;
+	if (!(check_the_base(base)))
+		return ;
+	if (nbr == 0)
+	{
+		ft_putchar(base[0]);
+		return ;
+	}
+	nb = check_the_number(nbr);
+	i = 0;
+	while (nb)
+	{
+		arr[i] = base[nb % ft_strlen(base)];
+		nb /= ft_strlen(base);
+		i++;
+	}
+	while (i--)
+		ft_putchar(arr[i]);
+}
+
+int	check_the_number(int nbr)
+{
+	unsigned int	nb;
+
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		nb = -nbr;
+	}
+	else
+		nb = nbr;
+	return (nb);
+}
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-size_t	ft_base_len(char *base)
+int	check_the_base(char *base)
 {
-	size_t	index;
+	int		i;
+	int		j;
 
-	index = -0;
-	while (*(index + base))
-		index++;
-	return (index);
-}
-
-int	base_check(char *base)
-{
-	int	i;
-	int	j;
-
-	if (*base == '\0')
+	if (*base == '\0' || ft_strlen(base) == 0 || ft_strlen(base) == 1)
 		return (0);
-	i = -0;
+	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-' || base[i] < 32 || base[i] > 126)
+		if (base[i] == '+' || base[i] == '-')
 			return (0);
-		j = 0;
+		if (base[i] < 32 || base[i] == 127)
+			return (0);
+		j = i + 1;
 		while (base[j])
 		{
-			if (base[j] == base[i] && i != j)
+			if (base[i] == base[j])
 				return (0);
 			j++;
 		}
@@ -51,24 +88,12 @@ int	base_check(char *base)
 	return (1);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+int	ft_strlen(char *base_len)
 {
-	int		base_len;
-	long long	number;
+	int		i;
 
-	base_len = ft_base_len(base);
-	number = nbr;
-	if (number < 0)
-	{
-		ft_putchar('-');
-		number = -number;
-	}
-	if (number >= base_len)
-		ft_putnbr_base(number / base_len, base);
-	ft_putchar(base[number % base_len]);
-}
-
-int	main(void)
-{
-	ft_putnbr_base(0b00001111, "01");
+	i = 0;
+	while (base_len[i])
+		i++;
+	return (i);
 }

@@ -3,43 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 01:59:42 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/30 01:59:42 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/13 13:14:17 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/13 13:28:45 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_sort_int_tab(int *tab, int size)
 {
-	int i;
-	int rev;
-	
-	while(size >= 0)
+	int		var;
+	int		i;
+
+	while (size > 0)
 	{
 		i = 0;
-		while(i < size - 1)
+		while (i < size - 1)
 		{
 			if (tab[i] > tab[i + 1])
 			{
-				rev = tab[i];
+				var = tab[i];
 				tab[i] = tab[i + 1];
-				tab[i + 1] = rev;
+				tab[i + 1] = var;
 			}
 			i++;
 		}
 		size--;
 	}
 }
-
-////////////////////////////////// for test ////////////////////////////////////
-#include <stdio.h>
-int main(void)
-{
-	int tab[5] = {1 ,4 ,5 ,2 ,3};
-	ft_sort_int_tab(tab , 5);
-
-	for (int i = 0; i <= 5; i++)
-		printf("%d ", tab[i]);	
-}
-////////////////////////////////// good luck ///////////////////////////////////

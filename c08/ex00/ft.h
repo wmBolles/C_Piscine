@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 16:53:22 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/06 16:53:47 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/07/26 13:16:53 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/26 13:40:22 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ void	ft_swap(int *a, int *b);
 void	ft_putstr(char *str);
 int		ft_strlen(char *str);
 int		ft_strcmp(char *s1, char *s2);
+
 #endif

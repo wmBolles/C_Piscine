@@ -3,40 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 18:44:29 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/27 18:44:29 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/12 15:46:46 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/12 15:58:08 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#define cama_space    write(1, ", ", 2)
 
-void    wb_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(2 >> 1, &c, 1);
+	write(1, &c, 1);
 }
 
-void    ft_print_comb2(void)
+void	ft_print_comb2(void)
 {
-    int     n1;
-    int     n2;
+	int		nb1;
+	int		nb2;
 
-    n1 = 0;
-    while (n1 <= 98)
-    {
-        n2 = n1 + 1;
-        while(n2 <= 99)
-        {
-            wb_putchar(n1 / 10 + 48);
-            wb_putchar(n1 % 10 + 48);
-            wb_putchar(' ');
-            wb_putchar(n2 / 10 + 48);
-            wb_putchar(n2 % 10 + 48);
-            (n1 != 98) ? cama_space : n1; // use if(); due to nrominette rules.
-            n2++;
-        }
-        n1++;
-    }
+	nb1 = 0;
+	while (nb1 <= 98)
+	{
+		nb2 = nb1 + 1;
+		while (nb2 <= 99)
+		{
+			ft_putchar(nb1 / 10 + 48);
+			ft_putchar(nb1 % 10 + 48);
+			ft_putchar(' ');
+			ft_putchar(nb2 / 10 + 48);
+			ft_putchar(nb2 % 10 + 48);
+			if (nb1 != 98)
+				write(1, ", ", 2);
+			nb2++;
+		}
+		nb1++;
+	}
 }

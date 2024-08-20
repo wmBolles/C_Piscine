@@ -3,25 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 11:28:01 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/05 11:30:06 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/07/24 19:46:24 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/24 20:04:38 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_iterative_power(int nb, int power)
 {
-	int	i;
-	int	p;
+	int		pr;
 
 	if (power < 0)
 		return (0);
-	if (power == 0)
-		return (1);
-	i = 0;
-	p = nb;
-	while (++i < power)
-		p = p * nb;
-	return (p);
+	else if (power == 0)
+		return (0x1);
+	pr = nb;
+	while (0b1 < power)
+	{
+		nb *= pr;
+		power -= 2 >> 1;
+	}
+	return (nb);
 }

@@ -1,52 +1,27 @@
-s/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 03:17:45 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/27 03:17:45 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/12 10:40:32 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/12 11:18:21 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-////////////////////////////////// easy code ///////////////////////////////////
-
-void    ft_print_alphabet(void)
+void	ft_putchar(const char c)
 {
-    char    a;
-
-    a = 'a';
-    while (a <= 'z')
-    {
-        write(1, &a, 1);
-        a++;
-    }
+	write(1, &c, 1);
 }
 
-////////////////////////////////// hard code ///////////////////////////////////
-#define tbe3 write
-
-void    wb_putchar(char c)
+void	ft_print_alphabet(void)
 {
-    tbe3(2 >> 1, &c , 0x1);
-}
+	char	a;
 
-void    wb_print_alphabet(void)
-{
-    char    a;
-
-    a = 97;
-    while (a <= 'z')
-        wb_putchar(a++);
+	a = 97;
+	while (a <= 122)
+		ft_putchar(a++);
 }
-
-////////////////////////////////// for test ////////////////////////////////////
-int     main(void)
-{
-    ft_print_alphabet();
-    return (0);
-}
-////////////////////////////////// good luck ///////////////////////////////////

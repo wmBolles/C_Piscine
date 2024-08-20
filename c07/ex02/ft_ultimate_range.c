@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmbolles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 00:42:31 by wmbolles          #+#    #+#             */
-/*   Updated: 2023/09/08 00:42:38 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/07/20 03:19:37 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/24 02:01:30 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,24 @@
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	int		bound;
-	int		index;
-	int		*buffer;
-	int		*d;
+	int		i;
+	int		size;
 
 	if (min >= max)
 	{
 		*range = 0;
 		return (0);
 	}
-	bound = max - min;
-	d = (buffer = malloc(bound * sizeof(int)));
-	if (!d)
-	{
-		*range = 0;
+	size = max - min;
+	*range = (int *)malloc(sizeof(int) * size);
+	if (*range == 0)
 		return (-1);
-	}
-	*range = buffer;
-	index = 0;
-	while (index < bound)
+	i = 0;
+	while (i < size)
 	{
-		buffer[index] = min + index;
-		index++;
+		range[0][i] = min;
+		i++;
+		min++;
 	}
-	return (bound);
+	return (size);
 }

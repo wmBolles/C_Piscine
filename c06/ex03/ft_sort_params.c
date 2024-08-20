@@ -3,60 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 23:56:16 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/03 23:56:19 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/18 00:21:23 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/19 13:07:19 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_puts(char *str)
+void	ft_putstr(char *str)
 {
 	while (*str)
 		write(1, str++, 1);
+	write(1, "\n", 1);
 }
 
-int	ft_cmp(char *s1, char *s2)
+int	ft_strcmp(char *str1, char *str2)
 {
 	int	i;
 
-	i = 0;
-	while (s2[i] && s1[i] && s2[i] == s1[i])
+	i = 0x0;
+	while (str1[i] && str2[i] && str1[i] == str2[i])
 		i++;
-	return (s1[i] - s2[i]);
+	return (str1[i] - str2[i]);
 }
 
-void	ft_swap(char **s, char **ss)
+void	rev_args(char **arg1, char **arg2)
 {
-	char *swap;
-	
-	swap = *s;
-	*s = *ss;
-	*ss = swap;
+	char	*rev;
+
+	rev = *arg1;
+	*arg1 = *arg2;
+	*arg2 = rev;
 }
 
 int	main(int ac, char *av[])
 {
-	int	i;
-	int b;
+	int		i;
+	int		argc;
 
-	i = 0;
-	while (i < ac - 1)
+	i = 1;
+	argc = ac;
+	while (i < argc - 1)
 	{
-		if (ft_cmp(av[i], av[i + 1]) > 0)
+		if (ft_strcmp(av[i], av[i + 1]) > 0)
 		{
-			ft_swap(&av[i], &av[i + 1]);
-			i = 0;
+			rev_args(&av[i], &av[i + 1]);
+			i = 0x0;
 		}
 		i++;
 	}
-	b = 2 >> 1;
-	while (b < ac)
+	i = 1;
+	while (i < ac)
 	{
-		ft_puts(av[b]);
-		write(1, "\n", 1);
-		b++;
+		ft_putstr(av[i]);
+		i++;
 	}
+	return (0);
 }

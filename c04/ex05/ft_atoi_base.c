@@ -3,61 +3,87 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 23:43:15 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/03 23:43:18 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/17 02:50:17 by wabolles          #+#    #+#             */
+/*   Updated: 2023/08/01 16:54:49 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isspace(char c)
+#include <unistd.h>
+
+int		check_twice(char c, char *base);
+int		ft_strlen(char *str);
+int		check_the_base(char *base);
+
+int	ft_atoi_base(char *str, char *base)
 {
-	if (c == '\t' || c == ' ' || c == '\n' || c == '\v' || c == '\f' ||
-			c == '\r')
-		return (1);
-	return (0);
+	int		sign;
+	int		nb;
+
+	if (!check_the_base(base))
+		return (0);
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	sign = 1;
+	while (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -sign;
+		str++;
+	}
+	nb = 0;
+	while (*str >= '0' && *str <= '9')
+	{
+		nb *= ft_strlen(base);
+		nb += *str - 48;
+		str++;
+	}
+	return (sign * nb);
 }
 
-static int	_isdigit(char c)
+int	check_twice(char c, char *base)
 {
-	if ((c >= '0' && c <= '9') ||
-			(c >= 'A' && c <= 'F'))
-		return (1);
-	return (0);
+	int		check_twice;
+
+	check_twice = 0;
+	while (*base)
+	{
+		if (c == *base)
+		{
+			check_twice++;
+			if (check_twice == 2)
+				return (0);
+		}
+		base++;
+	}
+	return (1);
 }
 
-static char	toupper(char c)
-{
-	if (c >= 'a' && c <= 'f')
-		return (c - 32);
-	return (c);
-}
-
-int			ft_atoi_base(char *str, int str_base)
+int	check_the_base(char *base)
 {
 	int		i;
-	int		neg;
-	int		ret;
 
-	neg = 1;
-	ret = 0;
+	if (ft_strlen(base) == 0 || ft_strlen(base) == 1)
+		return (0);
 	i = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
+	while (base[i])
 	{
-		neg = -1;
+		if (base[i] == '-' || base[i] == '+')
+			return (0);
+		if (!check_twice(base[i], base))
+			return (0);
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
+	return (1);
+}
+
+int	ft_strlen(char *str)
+{
+	int		i;
+
+	i = 0;
 	while (str[i])
-	{
-		if (!_isdigit(toupper(str[i])))
-			return (-1);
-		ret *= str_base;
-		ret += (str[i] <= '9') ? str[i] - '0' : toupper(str[i]) - 55;
 		i++;
-	}
-	return (ret * neg);
+	return (i);
 }

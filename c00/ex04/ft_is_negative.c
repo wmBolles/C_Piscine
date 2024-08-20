@@ -3,33 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 16:49:22 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/27 16:49:22 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/12 11:44:53 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/12 15:55:04 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-////////////////////////////////// easy code ///////////////////////////////////
-
-void    ft_is_negative(int n)
+void	ft_is_negative(int n)
 {
-    if (n < 0)
-        write(1, "N", 1);
-    else
-        write(1, "P", 1);
+	char	*np;
+
+	np = "NP";
+	write(1, np + ((n >= 0) * 1), 1);
 }
-
-////////////////////////////////// hard code ///////////////////////////////////
-
-void    wb_is_negative(int n)
-{
-    char    *ptr;
-
-    ptr = "NP";
-    write(2 >> 1, ptr + ((n >= 0) * 1), 0x1);
-}
-
-////////////////////////////////// good luck ///////////////////////////////////

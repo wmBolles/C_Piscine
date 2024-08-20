@@ -3,37 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 16:23:48 by wabolles          #+#    #+#             */
-/*   Updated: 2023/08/29 16:23:48 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/13 10:12:00 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/13 10:18:49 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_ultimate_ft(int *********nbr)
+void	ft_ultimate_ft(int *********nbr)
 {
-    *********nbr = 0x2a;
+	*********nbr = 42;
 }
-
-////////////////////////////////// for test ////////////////////////////////////
-#include <stdio.h>
-
-int main(void)
-{
-    int nb = 1337;
-
-    int *ptr1, **ptr2, ***ptr3, ****ptr4, *****ptr5, ******ptr6, *******ptr7, ********ptr8, *********ptr9;
-
-    ptr1 = &nb;
-    ptr2 = &ptr1;
-    ptr3 = &ptr2;
-    ptr4 = &ptr3;
-    ptr5 = &ptr4;
-    ptr6 = &ptr5;
-    ptr7 = &ptr6;
-    ptr8 = &ptr7;
-    ptr9 = &ptr8;
-    ft_ultimate_ft(ptr9);
-    printf("%d", nb);
-}
-////////////////////////////////// good luck ///////////////////////////////////

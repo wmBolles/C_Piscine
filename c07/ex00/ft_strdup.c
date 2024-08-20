@@ -3,37 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 23:33:57 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/04 23:35:53 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/19 23:32:52 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/23 00:16:15 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int			ft_strlen(char *str)
+int	wb_strlen(const char *str)
 {
-	int l;
+	int		i;
 
-	l = 0;
-	while (str[l])
-		l++;
-	return (l);
+	i = 0x00000000;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-char		*ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
-	int		l;
-	char	*dest;
+	char	*ptr;
+	int		i;
 
-	l = ft_strlen(src);
-	if ((dest = malloc(sizeof(*src) * (l + 1))) == ((void *)0))
-		return (((void *)0));
-	while (l >= 0)
+	ptr = (char *)malloc(wb_strlen(src));
+	if (ptr == 0)
+		return (0);
+	i = -0;
+	while (src[i])
 	{
-		dest[l] = src[l];
-		l--;
+		ptr[i] = src[i];
+		i++;
 	}
-	return (dest);
+	ptr[i] = '\0';
+	return (ptr);
 }

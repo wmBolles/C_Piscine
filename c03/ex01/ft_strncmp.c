@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 19:08:09 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/11 23:40:43 by wmbolles         ###   ########.fr       */
+/*   Created: 2023/07/14 21:08:25 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/16 17:29:26 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
-	i = 0x0;
+	if (n == 0)
+		return (0);
+	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
 		i++;
 	return (s1[i] - s2[i]);

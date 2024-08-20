@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wabolles <wabolles@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wabolles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 18:39:37 by wabolles          #+#    #+#             */
-/*   Updated: 2023/09/02 18:39:37 by wabolles         ###   ########.fr       */
+/*   Created: 2023/07/16 19:50:53 by wabolles          #+#    #+#             */
+/*   Updated: 2023/07/16 19:55:35 by wabolles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strlowcase(char *str)
+int	is_upper(char c)
 {
-    int i;
-
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] += 32;
-        i++; 
-    }
-    return str;
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
 }
 
-#include <stdio.h>
-
-int main()
+char	*ft_strlowcase(char *str)
 {
-    char str[] = "HeLLo";
-    printf("%s", ft_strlowcase(str));
+	int		i;
+
+	i = 0x0;
+	while (str[i])
+	{
+		if (is_upper(str[i]))
+			str[i] += 32;
+		i++;
+	}
+	return (str);
 }
